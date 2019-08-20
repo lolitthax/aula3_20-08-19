@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aprendendo TypeWriter - Origamid</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            background: white;
+        }
+        h1 {
+            max-width: 480px;
+            text-align: center;
+            margin: 60px auto;
+            font-family: 'Courier New', Courier, monospace;
+            color: black;
+        }
+        h1::after {
+            content: '|';
+            opacity: 1;
+            margin-left: 5px;
+            display: inline-block;
+            animation: blink .7s infinite;
+        }
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <h1>Isto é uma animação com JavaScript</h1>
+
+    <script>
+        // função que cria a animação
+        function typeWriter(elemento) {
+            //pegamos cada letra e colocamos dentro de um array
+            //innerHTML = pega todo o html do elemento
+            //o método split divimos as letras em diferentes partes em um array
+            //split(' ') -> divide as letras com cada parte onde estiver o espaço
+            //nada dentro ele divide tudo
+            const textoArray = elemento.innerHTML.split('');
+            //limpar
+            elemento.innerHTML = '';
+            //forEach -> para cada
+            // i -> index, onde cada letra se encontra
+            textoArray.forEach((letra, i) => { // seria a mesma coisa que criar: textoArray.forEach(function(letra,i))
+                //damos um tempo para adicionar cada item
+                //no caso a função seria o primiero parâmetro
+                //o html dentro do html adiciona letras uma seguida da outra *75 seg.
+                setTimeout(() => elemento.innerHTML += letra, 75 * i);
+            });
+        }
+        // Se estiver tendo problemas com performance, utilize o FOR loop como abaixo no local do forEach
+        // function typeWriter(elemento) {
+        //   const textoArray = elemento.innerHTML.split('');
+        //   elemento.innerHTML = '';
+        //   for(let i = 0; i < textoArray.length; i++) {
+        //     setTimeout(() => elemento.innerHTML += textoArray[i], 75 * i);
+        //   }
+        // }
+        // variável constante, pois ela não irá mudar.
+        const titulo = document.querySelector('h1');
+        //ativar a função
+        typeWriter(titulo);
+    </script>
+
+</body>
+
+</html>
