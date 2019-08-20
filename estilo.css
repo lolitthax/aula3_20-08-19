@@ -1,0 +1,95 @@
+/* começo */
+/* aqui termina o inglês kk */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+html,body{
+    margin:0;
+    padding:0;
+    height: 100%;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+/* cabeçalho */
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  
+}
+/* logotipo */
+header img{
+    align-self: center;
+}
+.logo2{
+    display:none;
+}
+/* navegação */
+header nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;    
+}
+/* menu */
+nav>a{
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+}
+
+/* corpo */
+body{
+    display:flex;
+    flex-direction: column;
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+
+}
+
+
+.position-img > img{
+    width: 300px;
+    height: 200px;
+    align-items: center;
+    margin: 10px ;
+}
+
+/* rodape */
+footer{
+    background-color: #6D214F;
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* responsivo */
+/* a partir de 360 muda */
+@media (min-width:360px){
+    header nav{
+        flex-direction:row; 
+        justify-content:  right;
+        margin-top: 0px;
+      
+    }
+    header img{
+        align-self: flex-start;
+  
+    }
+   .logo2{
+       display: block;
+       width: 50px;
+       height: 40px;
+
+   }
+   .logo1{
+       display: none;
+   }
+}
+
+
+
+
+
